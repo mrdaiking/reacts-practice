@@ -10,7 +10,9 @@
 
 html {
   font-size: 100%;
-} /*16px*/
+}
+
+/*16px*/
 
 :root {
   /* colors */
@@ -72,9 +74,11 @@ body {
   line-height: 1;
   color: var(--textColor);
 }
+
 p {
   margin: 0;
 }
+
 h1,
 h2,
 h3,
@@ -121,6 +125,7 @@ small,
 a {
   text-decoration: none;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -131,6 +136,7 @@ ul {
   display: block;
   object-fit: cover;
 }
+
 /* buttons */
 
 .btn {
@@ -146,18 +152,22 @@ ul {
   text-transform: capitalize;
   display: inline-block;
 }
+
 .btn:hover {
   background: var(--primary-700);
   box-shadow: var(--shadow-3);
 }
+
 .btn-hipster {
   color: var(--primary-500);
   background: var(--primary-200);
 }
+
 .btn-hipster:hover {
   color: var(--primary-200);
   background: var(--primary-700);
 }
+
 .btn-block {
   width: 100%;
 }
@@ -174,10 +184,12 @@ ul {
   color: var(--red-dark);
   background: var(--red-light);
 }
+
 .alert-success {
   color: var(--green-dark);
   background: var(--green-light);
 }
+
 /* form */
 
 .form {
@@ -189,6 +201,7 @@ ul {
   padding: 2rem 2.5rem;
   margin: 3rem auto;
 }
+
 .form-label {
   display: block;
   font-size: var(--small-text);
@@ -196,6 +209,7 @@ ul {
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
 }
+
 .form-input,
 .form-textarea {
   width: 100%;
@@ -212,15 +226,18 @@ ul {
 .form-textarea {
   height: 7rem;
 }
+
 ::placeholder {
   font-family: inherit;
   color: var(--grey-400);
 }
+
 .form-alert {
   color: var(--red-dark);
   letter-spacing: var(--letterSpacing);
   text-transform: capitalize;
 }
+
 /* alert */
 
 @keyframes spinner {
@@ -252,13 +269,21 @@ ul {
   margin: 0 auto;
   margin-top: 1rem;
 }
-/* ============= PROJECT CSS =============== */
 
+/* 
+============= 
+PROJECT CSS 
+=============== 
+*/
 body {
   background: var(--primary-500);
 }
 
-/* ============= NAV CSS =============== */
+/* 
+============= 
+Navbar
+=============== 
+*/
 
 nav {
   height: 5rem;
@@ -297,8 +322,11 @@ nav {
   transform: scale(1.05);
 }
 
-/* ============= HEERO CSS =============== */
-
+/* 
+============= 
+Hero
+=============== 
+*/
 .hero-container {
   min-height: calc(100vh - 5rem);
   display: grid;
@@ -306,9 +334,9 @@ nav {
 }
 
 .hero-center {
+  color: var(--white);
   width: var(--fluid-width);
   max-width: var(--max-width);
-  color: var(--white);
 }
 
 .hero-center h1 {
@@ -323,16 +351,188 @@ nav {
 }
 
 @media screen and (min-width: 992px) {
-  .hero-center h1 {
+  .hero-center {
     text-align: center;
   }
 
   .hero-center p {
-    max-width: 35rem;
+    max-width: 35em;
     margin: 0 auto;
   }
 
   .toggle-btn {
     display: none;
+  }
+}
+
+/* 
+============= 
+Sidebar
+=============== 
+*/
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  /* toggle */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-sidebar {
+  opacity: 1;
+  visibility: visible;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+/* toggle class */
+
+.sidebar-container {
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.close-btn {
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--primary-500);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.sidebar article {
+  margin-bottom: 2rem;
+}
+
+.sidebar h4 {
+  margin-bottom: 1rem;
+  color: var(--primary-700);
+}
+
+.sidebar-sublinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.5rem;
+}
+
+.sidebar-sublinks a {
+  display: block;
+  color: var(--grey-900);
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sidebar-sublinks svg {
+  color: var(--grey-500);
+}
+
+@media screen and (min-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* 
+============= 
+Nav Links
+=============== 
+*/
+.nav-links {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+
+    align-self: stretch;
+  }
+
+  .nav-center {
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .nav-link {
+    padding: 0 1rem;
+    color: var(--white);
+    background: transparent;
+    border-color: transparent;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+    cursor: pointer;
+  }
+}
+
+/* 
+============= 
+Submenu
+=============== 
+*/
+.submenu {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .submenu {
+    display: block;
+    position: fixed;
+    top: 7rem;
+    left: 50%;
+    width: var(--fluid-width);
+    max-width: var(--max-width);
+    background: var(--white);
+    padding: 2rem;
+    transform: rotateX(-90deg) translateX(-50%);
+    transform-origin: top;
+    perspective: 1000px;
+    border-radius: var(--borderRadius);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    z-index: -1;
+  }
+
+  .show-submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: rotateX(0deg) translateX(-50%);
+    z-index: 10;
+  }
+
+  .submenu h5 {
+    margin-bottom: 1rem;
+    color: var(--primary-700);
+  }
+
+  .submenu-links {
+    display: grid;
+    row-gap: 0.5rem;
+  }
+
+  .submenu-links a {
+    display: block;
+    color: var(--grey-900);
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .submenu-links svg {
+    color: var(--grey-500);
   }
 }

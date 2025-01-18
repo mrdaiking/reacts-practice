@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import 'react-toastify/dist/ReactToastify.css'
-import { AppProvider } from '../Strapi/Context.jsx'
+import { AppProvider } from '../Context.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
