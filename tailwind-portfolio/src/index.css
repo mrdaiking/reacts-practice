@@ -1,11 +1,3 @@
-@import 'tailwindcss';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .align-element {
-    @apply mx-auto max-w-7xl px-8;
-  }
-}
